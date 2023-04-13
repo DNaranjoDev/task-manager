@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:task_manager/app/view/home/home_page.dart';
 import 'package:task_manager/app/view/splash/splash_page.dart';
@@ -19,10 +18,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: primary),
         scaffoldBackgroundColor: backgroundColor,
         textTheme: Theme.of(context).textTheme.apply(
-          fontFamily: 'Hack',
-          bodyColor: textColor,
-          displayColor: textColor,
-        ),
+              fontFamily: 'Hack',
+              bodyColor: textColor,
+              displayColor: textColor,
+            ),
         bottomSheetTheme: const BottomSheetThemeData(
           backgroundColor: Colors.transparent,
         ),
@@ -33,9 +32,9 @@ class MyApp extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             textStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
-              fontSize: 18,
-              fontWeight: FontWeight.w700,
-            ),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                ),
           ),
         ),
       ),
