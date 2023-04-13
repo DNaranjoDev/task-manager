@@ -36,7 +36,7 @@ class SplashPage extends StatelessWidget {
             child: const Padding(
               padding: EdgeInsets.symmetric(horizontal: 32),
               child: Text(
-                'La mejor forma para que no se te olvide nada es anotarlo. Guardar tus tareas y ve completando poco a poco para aumentar tu productividad',
+                'La mejor forma para que no se te olvide nada es anotarlo. Guardar tus tareas y ve completando poco a poco para aumentar tu productividad. ¡Toca el texto para comenzar!',
                 textAlign: TextAlign.center,
               ),
             ),
