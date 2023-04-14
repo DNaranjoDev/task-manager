@@ -66,39 +66,47 @@ class _NewTaskModal extends StatelessWidget {
         borderRadius: BorderRadius.vertical(top: Radius.circular(21)),
         color: Colors.white,
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const H1('Nueva Tarea'),
-          const SizedBox(
-            height: 26,
-          ),
-          TextField(
-            controller: _controller,
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: Colors.white,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-              hintText: 'Escribe tu nueva tarea',
+      child: Padding(
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const H1('Nueva Tarea'),
+            const SizedBox(
+              height: 26,
             ),
-          ),
-          const SizedBox(
-            height: 26,
-          ),
-          ElevatedButton(
-            onPressed: () {
-              if (_controller.text.isNotEmpty) {
-                final task = Task(_controller.text);
-                context.read<TaskProvider>().addNewTask(task);
-                Navigator.of(context).pop();
-              }
-            },
-            child: const Text('Guardar'),
-          ),
-        ],
+            TextField(
+              controller: _controller,
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                hintText: 'Escribe tu nueva tarea',
+              ),
+            ),
+            const SizedBox(
+              height: 26,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(double.infinity, 54),
+              ),
+              onPressed: () {
+                if (_controller.text.isNotEmpty) {
+                  final task = Task(_controller.text);
+                  context.read<TaskProvider>().addNewTask(task);
+                  Navigator.of(context).pop();
+                }
+              },
+              child: const Text('Guardar'),
+            ),
+          ],
+        ),
       ),
     );
   }
